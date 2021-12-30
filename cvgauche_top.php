@@ -1,3 +1,8 @@
+<?php 
+    require('classes/personne.php'); 
+?>
+
+
 <div class="cv_gauche_top carte ">
     <div class="cv_profile">
         <div class="couverture"></div>
@@ -11,16 +16,31 @@
         <div class="div_pict">
             <img class="pict" src="image/photocv.jpg">
             <div class="profile_elements">
-                <h3 class="pname"><?php echo 'FOTSO KANGA LIONEL'; ?></h3>
-                <p class="psub"><?php echo 'Etudiant'; ?></p>
+                <?php
+                $pers = new Personne('FOTSO KANGA', 'LIONEL', 'Etudiant', '16 Avril 2000', 'l\'ouest', 'Celibataire', 'New bell', 'Douala', 'Cameroun', '(237) 679032247', 'Mobile, Whatsapp, Telegram', 'lionelfotso413@gmail.com', 'Google, Github, Facebook')
+                ?>
+                <h3 class="pname"><?php echo $pers->nom . ' ' . $pers->prenom; ?></h3>
+                <p class="psub"><?php echo $pers->statut; ?></p>
             </div>
         </div>
 
         <div class="push_btn">
-            <span class="plus">+</span>
+            <?php include('bouton.php'); ?>
         </div>
+            
+        <!--div class="share">
+            <ol>
+                <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-whatsapp fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+            </ol>
+            <div class="push_btn">
+                <span class="plus">+</span>
+            </div>
+        </div-->
     </div>
-
+    
     <div class="contenu">
         <!--personal data content-->
         <div class="cv_info">
@@ -28,9 +48,9 @@
                 <!--date of birth-->
                 <img class="birth" src="icons/anive.ico">
                 <div class="over_all">
-                    <p class="texta"><?php echo 'Nee le 16 Avril 2001'; ?> </p>
-                    <p class="texta"><?php echo 'Originaire de l\'ouest Cameroun'; ?> </p>
-                    <p class="texta"><?php echo 'Celibataire'; ?></p>
+                    <p class="texta"><?php echo 'Nee le ' . $pers->dateN; ?> </p>
+                    <p class="texta"><?php echo 'Originaire de ' . $pers->region . ' ' . $pers->pays; ?> </p>
+                    <p class="texta"><?php echo $pers->stmt; ?></p>
                     </p>
                     <hr class="ligne">
                 </div>
@@ -41,9 +61,9 @@
                 <!--Location-->
                 <img class="birth" src="icons/map.png">
                 <div class="over_all">
-                    <p class="texta"><?php echo 'Residant a New bell'; ?> </p>
-                    <p class="texta"><?php echo 'Douala - Cameroun'; ?> </p>
-                    <p class="texta"><?php echo 'Celibataire'; ?></p>
+                    <p class="texta"><?php echo 'Residant a ' . $pers->residence; ?> </p>
+                    <p class="texta"><?php echo $pers->ville . ' - ' . $pers->pays; ?> </p>
+                    <p class="texta"><?php echo $pers->pays; ?></p>
                     </p>
                     <hr class="ligne">
                 </div>
@@ -54,8 +74,8 @@
                 <!--date of birth-->
                 <img class="birth" src="icons/tel.png">
                 <div class="over_all">
-                    <p class="texta"><?php echo '(237) 679032247'; ?></p>
-                    <p class="texta"><?php echo 'Mobile, Whatsapp, Telegram'; ?></p>
+                    <p class="texta"><?php echo $pers->tel; ?></p>
+                    <p class="texta"><?php echo $pers->typeTel; ?></p>
                     </p>
                     <hr class="ligne">
                 </div>
@@ -66,8 +86,8 @@
                 <!--date of birth-->
                 <img class="birth" src="icons/mail.png">
                 <div class="over_all">
-                    <p class="texta"><?php echo 'lionelfotso413@gmail.com'; ?></p>
-                    <p class="texta"><?php echo 'Google, Github'; ?></p>
+                    <p class="texta"><?php echo $pers->mail; ?></p>
+                    <p class="texta"><?php echo $pers->typemail; ?></p>
                     </p>
                     <hr class="ligne">
                 </div>

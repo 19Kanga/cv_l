@@ -30,7 +30,6 @@
     height: 60px;
     border-radius: 50%;
     background-color: rgb(196, 63, 63);
-    position: absolute;
     color: white;
     display: flex;
     justify-content: center;
@@ -39,6 +38,8 @@
     bottom: -30px;
     right: 30px;
     font-weight: bold;
+    cursor: pointer;
+    position: absolute;
 }
 
 .search_bar {
@@ -214,6 +215,9 @@
     height: 4px;
     margin-bottom: 12px;
     margin-top: 12px;
+}
+.rang{
+   height: 4px; 
 }
 
 .progression_bar {
@@ -431,6 +435,10 @@
 
 .lang img {
     margin-right: 15px;
+}
+
+.panel-title:hover{
+    cursor:pointer;
 }
 
 @media screen and (max-width:750px) {
